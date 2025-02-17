@@ -10,8 +10,8 @@ class CreateLoansTable extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id(); // Menambahkan kolom id sebagai primary key
-            $table->unsignedBigInteger('book_id'); // Foreign key untuk buku
-            $table->unsignedBigInteger('user_id'); // Foreign key untuk pengguna
+            $table->ForeignId('book_id'); // Foreign key untuk buku
+            $table->foreignId('user_id'); // Foreign key untuk pengguna
             $table->date('loan_date'); // Tanggal peminjaman
             $table->date('return_date')->nullable(); // Tanggal pengembalian, nullable
             $table->string('status'); // Status peminjaman (misalnya, 'On Loan', 'Returned')
